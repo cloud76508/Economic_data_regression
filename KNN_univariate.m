@@ -11,19 +11,30 @@ close all;
 %-----------------------------------------
 % load training/testing data
 %-----------------------------------------
-trn = permutData(1:13,:);
-tst = permutData(14:end,:);
 
-% y = K (human development), x = S (Youth_unemployment)
-[Value1, Index1] = sort(trn(:,2));
-temp1 = trn(Index1,:);
-[Value2, Index2] = sort(tst(:,2));
-temp2 = tst(Index2,:);
-
+% Using all data to train and test model
+[Value1, Index1] = sort(normalData(:,2));
+temp1 = normalData(Index1,:);
 trn_data.X = temp1(:,2)';
 trn_data.y = temp1(:,1);
-tst_data.X = temp2(:,2)';
-tst_data.y = temp2(:,1);
+tst_data.X = temp1(:,2)';
+tst_data.y = temp1(:,1);
+
+% % Spliting data into traning and test
+
+% trn = permutData(1:13,:);
+% tst = permutData(14:end,:);
+
+% % y = K (human development), x = S (Youth_unemployment)
+% [Value1, Index1] = sort(trn(:,2));
+% temp1 = trn(Index1,:);
+% [Value2, Index2] = sort(tst(:,2));
+% temp2 = tst(Index2,:);
+% 
+% trn_data.X = temp1(:,2)';
+% trn_data.y = temp1(:,1);
+% tst_data.X = temp2(:,2)';
+% tst_data.y = temp2(:,1);
 
 % % y = K (human development), x = T (GDP)
 % [Value1, Index1] = sort(trn(:,3));

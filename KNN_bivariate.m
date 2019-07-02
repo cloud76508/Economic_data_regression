@@ -7,14 +7,20 @@ loadData
 cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 
 %-----------------------------------------
-% multidimensional data (function 9 as in paper)
+% multidimensional data
 %-----------------------------------------
-%[trn_data, tst_data] = function9(100, 961);
 
-trn_data.X = permutData(1:13,2:3)';
-trn_data.y = permutData(1:13,1);
-tst_data.X = permutData(14:end,2:3)';
-tst_data.y = permutData(14:end,1);
+% Using all data to train and test model
+trn_data.X = normalData(:,2:3)';
+trn_data.y = normalData(:,1);
+tst_data.X = normalData(:,2:3)';
+tst_data.y = normalData(:,1);
+
+% Spliting data into traning and test
+% trn_data.X = permutData(1:13,2:3)';
+% trn_data.y = permutData(1:13,1);
+% tst_data.X = permutData(14:end,2:3)';
+% tst_data.y = permutData(14:end,1);
 
 %-----------------------------------------
 % experiment setup

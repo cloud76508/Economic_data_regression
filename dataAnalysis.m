@@ -9,14 +9,18 @@ zlabel('K')
 
 %histogram 
 figure(2)
+hist(permutData(:,1))
+xlabel('K')
+
+figure(3)
 hist(permutData(:,2))
 xlabel('S')
 
-figure(3)
+figure(4)
 hist(permutData(:,3))
 xlabel('T')
 
-figure(4)
+figure(5)
 plotmatrix(normalData)
 
 
