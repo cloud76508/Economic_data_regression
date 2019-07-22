@@ -2,7 +2,7 @@ function [data, annuChangeRate,normalData, permutData] = loadData(path)
 temp = fopen(path);
 
 % % import the financial data [Year, Y, X1, X2]
-% temp = fopen('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
+% temp = fopen('C:\Users\User\Documents\GitHub\Financial_data_regression\Economic_data.csv');
 
 rawData = textscan(temp, '%s', 'Delimiter',',');
 temp = rawData{1,1}(5:end);

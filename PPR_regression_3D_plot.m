@@ -6,19 +6,19 @@ clc
 optimalPara = 2;
 
 % GDP data
-[~,data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
+[~,data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
 
-% [data, ~, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
+% [data, ~, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
 % data(:,2) =  - data(:,2);
 
 % % CLI data
-% [raw, data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data_CLI.csv');
+% [raw, data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data_CLI.csv');
 
 %  % WIP data
-%  [raw, data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data_WIP.csv');
+%  [raw, data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data_WIP.csv');
 
 %  % PJ data
-%  [raw, data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data_PJ.csv');
+%  [raw, data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data_PJ.csv');
 
 
 cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
