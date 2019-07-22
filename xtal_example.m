@@ -12,41 +12,41 @@ close all;
 % load training/testing data
 %-----------------------------------------
 
-trn_data.X = normalData(1:2:27,3)';
-trn_data.y = normalData(1:2:27,1);
-tst_data.X = normalData(2:2:26,3)';
-tst_data.y = normalData(2:2:26,1);
+% trn_data.X = normalData(1:2:27,3)';
+% trn_data.y = normalData(1:2:27,1);
+% tst_data.X = normalData(2:2:26,3)';
+% tst_data.y = normalData(2:2:26,1);
 
-% tmp = load('xtal_linuxtrain.txt', '-ascii');
-% trn_data.X = tmp(:,1)';
-% trn_data.y = tmp(:,2);
-% 
-% tst_data = trn_data;
-% tmp = load('xtal_linuxtest.txt', '-ascii');
-% tst_data.X = tmp(:,1)';
-% tst_data.y = tmp(:,2);
+tmp = load('xtal_linuxtrain.txt', '-ascii');
+trn_data.X = tmp(:,1)';
+trn_data.y = tmp(:,2);
+
+tst_data = trn_data;
+tmp = load('xtal_linuxtest.txt', '-ascii');
+tst_data.X = tmp(:,1)';
+tst_data.y = tmp(:,2);
 
 %-----------------------------------------
 % experiment setup
 %-----------------------------------------
-exp(1).method = 'KNN1';
-exp(1).params = [3;5;7;9;11;13];
+% exp(1).method = 'KNN1';
+% exp(1).params = [3;5;7;9;11;13];
 
 
-% exp(1).method = 'ANN1';
-% exp(1).params = [10;20;30;40;50];
-% 
-% exp(2).method = 'PPR1';
-% exp(2).params = [1;2;3;4;5;10;15];
-% 
-% exp(3).method = 'CTM1';
-% exp(3).params = [[1,0]; [1,2]; [1,5]; [1,9]];
+exp(1).method = 'ANN1';
+exp(1).params = [10;20;30;40;50];
 
-% exp(4).method = 'KNN1';
-% exp(4).params = [2;5;10;20;30;40];
+exp(2).method = 'PPR1';
+exp(2).params = [1;2;3;4;5;10;15];
 
-% exp(5).method = 'RBF1';
-% exp(5).params = [2;5;10;15;20;25];
+exp(3).method = 'CTM1';
+exp(3).params = [[1,0]; [1,2]; [1,5]; [1,9]];
+
+exp(4).method = 'KNN1';
+exp(4).params = [2;5;10;20;30;40];
+
+exp(5).method = 'RBF1';
+exp(5).params = [2;5;10;15;20;25];
 
 % exp(6).method = 'MRS1';
 % exp(6).params = [[20,0]; [20,5]; [20,9]; [50,0]; [50,5]; [50,9]; [100,0]; [100,5]; [100,9]];

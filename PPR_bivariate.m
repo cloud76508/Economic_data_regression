@@ -2,7 +2,7 @@ clear all
 close all;
 clc
 
-loadData
+[~, ~, normalData, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
 
 cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 
@@ -19,13 +19,12 @@ tst_data.y = normalData(:,1);
 %-----------------------------------------
 % experiment setup
 %-----------------------------------------
-exp(1).method = 'KNN1';
-% try several different values
-exp(1).params = [2;3;4;5;6];
+exp(1).method = 'PPR1';
+% % try several different values
+% exp(1).params = [1;2;5;8];
 
-% % manually select a value
-% exp(1).params = [2];
-
+% manually select a value
+exp(1).params = [2];
 
 %-----------------------------------------
 % CHANGE THE ENIVORMENT TO CYGWIN!

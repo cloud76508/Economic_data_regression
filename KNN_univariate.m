@@ -13,45 +13,22 @@ close all;
 %-----------------------------------------
 
 % Using all data to train and test model
-[Value1, Index1] = sort(normalData(:,2));
+[Value1, Index1] = sort(normalData(:,3));
 temp1 = normalData(Index1,:);
-trn_data.X = temp1(:,2)';
+trn_data.X = temp1(:,3)';
 trn_data.y = temp1(:,1);
-tst_data.X = temp1(:,2)';
+tst_data.X = temp1(:,3)';
 tst_data.y = temp1(:,1);
-
-% % Spliting data into traning and test
-
-% trn = permutData(1:13,:);
-% tst = permutData(14:end,:);
-
-% % y = K (human development), x = S (Youth_unemployment)
-% [Value1, Index1] = sort(trn(:,2));
-% temp1 = trn(Index1,:);
-% [Value2, Index2] = sort(tst(:,2));
-% temp2 = tst(Index2,:);
-% 
-% trn_data.X = temp1(:,2)';
-% trn_data.y = temp1(:,1);
-% tst_data.X = temp2(:,2)';
-% tst_data.y = temp2(:,1);
-
-% % y = K (human development), x = T (GDP)
-% [Value1, Index1] = sort(trn(:,3));
-% temp1 = trn(Index1,:);
-% [Value2, Index2] = sort(tst(:,3));
-% temp2 = tst(Index2,:);
-% 
-% trn_data.X = temp1(:,3)';
-% trn_data.y = temp1(:,1);
-% tst_data.X = temp2(:,3)';
-% tst_data.y = temp2(:,1);
 
 %-----------------------------------------
 % experiment setup
 %-----------------------------------------
 exp(1).method = 'KNN1';
-exp(1).params = [2;3;4;5;6;7];
+% try several different values
+exp(1).params = [2;3;4;5;6];
+
+% % manually select a value
+% exp(1).params = [2];
 
 %-----------------------------------------
 % Change the environment to Cygwin
@@ -89,8 +66,12 @@ for i = 1:length(exp)
 
     legend([h1 h2 h3], 'training examples', 'testing examples', 'prediction', ...
            'location', 'best');
-
+    
 end
+
+title('NRMS = 0.198')
+xlabel('GDP')
+ylabel('HDI')
 
 % find out the best method
 [min_nrms,best_method] = min([exp.min_nrms]);

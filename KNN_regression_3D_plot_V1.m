@@ -1,25 +1,28 @@
 clear all
 
-[~,~, normalData, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
-
-normalData(:,2) = 1- normalData(:,2);
+[~,data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
 
 
-N = 1.0;
+% Using all data to train and test model
+trn_data.X = data(:,2:3)';
+trn_data.y = data(:,1);
+tst_data.X = data(:,2:3)';
+tst_data.y = data(:,1);
+
 pointsNum = 30;
 
-x=linspace(0, N,pointsNum);
-y=x;
+x=linspace(max(trn_data.X(1,:)), min(trn_data.X(1,:)),pointsNum);
+y=linspace(max(trn_data.X(2,:)), min(trn_data.X(2,:)),pointsNum);
 [X,Y]=meshgrid(x,y);
 
 meshPoint = [reshape(X,[],1) reshape(Y,[],1)];
 
-optimalK = 2;
+optimalK = 10;
 meshPointZ = [];
 for n =1:size(meshPoint,1)
     loop = 1;
-    E_distance = (normalData(:,2)-meshPoint(n,1)).^2 +  (normalData(:,3)-meshPoint(n,2)).^2;
-    tempData = normalData;
+    E_distance = (data(:,2)-meshPoint(n,1)).^2 +  (data(:,3)-meshPoint(n,2)).^2;
+    tempData = data;
     
     while loop <= optimalK
         [~, tempIndex] = min(E_distance);
@@ -42,7 +45,7 @@ f.Position = [200, 50, 800, 600];
 mesh(Y,X,Z)
 
 hold on
-scatter3(normalData(:,3),normalData(:,2), normalData(:,1),'x','red','LineWidth', 2)
+scatter3(data(:,3),data(:,2), data(:,1),'x','red','LineWidth', 2)
 xlabel('T')
 ylabel('1-S')
 zlabel('K')

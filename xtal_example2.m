@@ -9,12 +9,12 @@ cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 %-----------------------------------------
 % multidimensional data (function 9 as in paper)
 %-----------------------------------------
-%[trn_data, tst_data] = function9(100, 961);
+[trn_data, tst_data] = function9(100, 961);
 
-trn_data.X = permutData(1:13,2:3)';
-trn_data.y = permutData(1:13,1);
-tst_data.X = permutData(14:end,2:3)';
-tst_data.y = permutData(14:end,1);
+% trn_data.X = permutData(1:13,2:3)';
+% trn_data.y = permutData(1:13,1);
+% tst_data.X = permutData(14:end,2:3)';
+% tst_data.y = permutData(14:end,1);
 
 % tst_data.X = trn_data.X;
 % tst_data.y = trn_data.y;
@@ -23,24 +23,21 @@ tst_data.y = permutData(14:end,1);
 %-----------------------------------------
 % experiment setup
 %-----------------------------------------
-exp(1).method = 'KNN1';
-exp(1).params = [2;3;4;5;6];
 
+exp(1).method = 'ANN1';
+exp(1).params = [5;10;20;40];
 
-% exp(1).method = 'ANN1';
-% exp(1).params = [5;10;20;40];
-% 
-% exp(2).method = 'PPR1';
-% exp(2).params = [1;2;5;8];
-% 
-% exp(3).method = 'CTM1';
-% exp(3).params = [[2,0];[2,2];[2,5];[2,9]];
-% 
-% exp(4).method = 'KNN1';
-% exp(4).params = [2;4;8;16];
-% 
-% exp(5).method = 'RBF1';
-% exp(5).params = [16;25;36;49;64];
+exp(2).method = 'PPR1';
+exp(2).params = [1;2;5;8];
+
+exp(3).method = 'CTM1';
+exp(3).params = [[2,0];[2,2];[2,5];[2,9]];
+
+exp(4).method = 'KNN1';
+exp(4).params = [2;4;8;16];
+
+exp(5).method = 'RBF1';
+exp(5).params = [16;25;36;49;64];
 
 
 %-----------------------------------------
