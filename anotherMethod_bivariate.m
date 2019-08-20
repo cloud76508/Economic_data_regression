@@ -1,7 +1,7 @@
 clear all
 clc
+[data,~, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv')
 
-loadData
 data(:,2) =  - data(:,2);
 
 pointsNum = 30;

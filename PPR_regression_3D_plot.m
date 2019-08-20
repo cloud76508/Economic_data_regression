@@ -25,7 +25,10 @@ cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 
 %-----------------------------------------
 % multidimensional data
-%-----------------------------------------
+%----------------------------------------- 
+
+% % take log for dependent variables
+% data(:,1) = log(data(:,1));
 
 % Using all data to train and test model
 trn_data.X = data(:,2:3)';
@@ -34,9 +37,6 @@ tst_data.X = data(:,2:3)';
 tst_data.y = data(:,1);
 
 pointsNum = 30;
-
-% x=linspace(-15, -30,pointsNum);
-% y=linspace(25, 45,pointsNum);
 
 x=linspace(max(trn_data.X(1,:)), min(trn_data.X(1,:)),pointsNum);
 y=linspace(max(trn_data.X(2,:)), min(trn_data.X(2,:)),pointsNum);

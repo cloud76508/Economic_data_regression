@@ -1,7 +1,8 @@
 clear all
 clc
 
-loadData
+[~,~, normalData, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
+
 
 cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 

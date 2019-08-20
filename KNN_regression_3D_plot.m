@@ -1,8 +1,6 @@
 clear all
 
-[~,~, normalData, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
-
-normalData(:,2) = 1- normalData(:,2);
+[~,~, normalData, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
 
 
 N = 1.0;
@@ -14,7 +12,7 @@ y=x;
 
 meshPoint = [reshape(X,[],1) reshape(Y,[],1)];
 
-optimalK = 2;
+optimalK = 10;
 meshPointZ = [];
 for n =1:size(meshPoint,1)
     loop = 1;
@@ -44,9 +42,8 @@ mesh(Y,X,Z)
 hold on
 scatter3(normalData(:,3),normalData(:,2), normalData(:,1),'x','red','LineWidth', 2)
 xlabel('T')
-ylabel('1-S')
+ylabel('S')
 zlabel('K')
-title('NRMS = 0.123')
 
 % hold on
 % 

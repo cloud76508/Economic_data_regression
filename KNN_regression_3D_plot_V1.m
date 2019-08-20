@@ -1,6 +1,6 @@
 clear all
 
-[~,data, ~, ~] = loadData('C:\Users\User\Documents\GitHub\Financial_data_regression\financial_data.csv');
+[~,~, data, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
 
 
 % Using all data to train and test model
@@ -34,6 +34,7 @@ for n =1:size(meshPoint,1)
     
 end
 
+
 Z = reshape(mean(meshPointZ'),pointsNum,pointsNum);
 
 
@@ -46,10 +47,11 @@ mesh(Y,X,Z)
 
 hold on
 scatter3(data(:,3),data(:,2), data(:,1),'x','red','LineWidth', 2)
+set (gca, 'ydir', 'reverse' )
 xlabel('T')
-ylabel('1-S')
+ylabel('S')
 zlabel('K')
-title('NRMS = 0.123')
+title('KNN regression (k = 10), NRMS = 0.3626')
 
 % hold on
 % 

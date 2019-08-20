@@ -2,7 +2,7 @@ clear all
 close all;
 clc
 
-loadData
+[~,~, normalData, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
 
 cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 
@@ -21,7 +21,7 @@ tst_data.y = normalData(:,1);
 %-----------------------------------------
 exp(1).method = 'KNN1';
 % try several different values
-exp(1).params = [2;3;4;5;6];
+exp(1).params = [2;3;4;5;10];
 
 % % manually select a value
 % exp(1).params = [2];

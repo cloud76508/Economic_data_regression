@@ -19,8 +19,8 @@ data = data';
 % Annual change rate (%, shift all data to positive)
 annuChange = diff(data);
 annuChangeRate = annuChange./data(1:end-1,:)*100;
-%normalized annual change rate
-annuChangeRate = [normalization(annuChangeRate(:,1))', normalization(annuChangeRate(:,2))', normalization(annuChangeRate(:,3))'];
+% %normalized annual change rate
+% annuChangeRate = [normalization(annuChangeRate(:,1))', normalization(annuChangeRate(:,2))', normalization(annuChangeRate(:,3))'];
 
 % normalized data
 normalData = [normalization(data(:,1))', normalization(data(:,2))', normalization(data(:,3))'];

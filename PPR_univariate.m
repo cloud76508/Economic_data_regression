@@ -1,7 +1,7 @@
 clear all
 clc
 
-loadData
+[data, ~ , ~, ~] = loadData('C:\Users\User\Documents\GitHub\Economic_data_regression\Economic_data.csv');
 
 cd C:\Users\User\Documents\MATLAB\xtal\xtal_linux
 
@@ -11,24 +11,25 @@ close all;
 %-----------------------------------------
 % load training/testing data
 %-----------------------------------------
+eco_index = 3; % GDP = 3, Youth unemployment = 2
 
 % Using all data to train and test model
-[Value1, Index1] = sort(normalData(:,3));
-temp1 = normalData(Index1,:);
-trn_data.X = temp1(:,3)';
+[Value1, Index1] = sort(data(:,eco_index));
+temp1 = data(Index1,:);
+trn_data.X = temp1(:,eco_index)';
 trn_data.y = temp1(:,1);
-tst_data.X = temp1(:,3)';
+tst_data.X = temp1(:,eco_index)';
 tst_data.y = temp1(:,1);
 
 %-----------------------------------------
 % experiment setup
 %-----------------------------------------
 exp(1).method = 'PPR1';
-% try several different values
-exp(1).params = [1;2;5;8];
+% % try several different values
+% exp(1).params = [1;2;5;8];
 
-% % manually select a value
-% exp(1).params = [2];
+% manually select a value
+exp(1).params = [2];
 
 %-----------------------------------------
 % Change the environment to Cygwin
@@ -69,8 +70,11 @@ for i = 1:length(exp)
     
 end
 
-title('NRMS = 0.198')
-xlabel('GDP')
+if eco_index == 3 
+    xlabel('GDP')
+elseif eco_index == 2
+    xlabel('Youth unemployment')
+end
 ylabel('HDI')
 
 % find out the best method
