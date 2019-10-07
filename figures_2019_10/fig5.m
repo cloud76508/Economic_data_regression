@@ -22,14 +22,14 @@ hold on
 c1 = contour(X,Y,z1,[8], 'b');
 
 
-xLab = xlabel('X_1');
+xLab = xlabel('X_1','fontsize',10);
 xLab.Position = [5 -0.5 -0.05];
 xticks([])
-yLab = ylabel('X_2');
+yLab = ylabel('X_2','fontsize',10);
 yLab.Position = [-0.5 5 -0.08];
 yticks([])
 XX = yLab.Position;
-zlabel('U')
+zlabel('U','fontsize',10)
 zticks([])
 
 %shading interp
