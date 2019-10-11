@@ -16,14 +16,14 @@ y1 = reshape(y1,length(x2),length(x1));
 figure
 c1 = contour(x1,x2,y1,[4], 'r');
 f1 = gca;
-xlabel('S')
-ylabel('T')
+xlabel('X_1')
+ylabel('X_2')
 f1.XAxisLocation ='top';
 xticks([0 1])
-xticklabels({'Smax', '0'})
+xticklabels({'X_1_m_a_x', '0'})
 f1.YAxisLocation ='right';
 yticks([0 1])
-yticklabels({'Tmax', '0'})
+yticklabels({'X_2_m_a_x', '0'})
 hold on
 scatter(0,0,'MarkerEdgeColor','r',...
               'MarkerFaceColor','r',...

@@ -19,10 +19,10 @@ c1 = contour(x1,x2,y1,[1], 'r', 'LineWidth',1.5 );
 f1 =gca;
 f1.XAxisLocation ='top';
 xticks([0])
-xticklabels({'Smax'})
+xticklabels({'X_1_m_a_x'})
 f1.YAxisLocation ='right';
 yticks([0])
-yticklabels({'Tmax'})
+yticklabels({'X_2_m_a_x'})
 hold on
 scatter(0,0,'MarkerEdgeColor','r',...
               'MarkerFaceColor','r',...
@@ -45,12 +45,12 @@ scatter(1,1,'MarkerEdgeColor','b',...
               'MarkerFaceColor','b',...
               'LineWidth',1.5)
 text(0.95,0.95,'B', 'Color','b')
-text(0.5,-0.07,'S_A')
-text(0.5,1.05,'S_B')
-text(-0.1,0.5,'T_A')
-text(1.05,0.5,'T_B')
-text(0.1,0.6,'U_B', 'Color','b')
-text(0.65,0.65,'U_A', 'Color','r')
+text(0.5,-0.07,'X_1_B')
+text(0.5,1.05,'X_1_A')
+text(-0.1,0.5,'X_2_B')
+text(1.05,0.5,'X_2_A')
+text(0.5,0.05,'U_B = Constant', 'Color','b')
+text(0.65,0.65,'U_A = Constant', 'Color','r')
 
 % r1 = c1;
 % r1(:,1) = [];
@@ -58,24 +58,30 @@ text(0.65,0.65,'U_A', 'Color','r')
 % r2(:,1) = [];
 % r2 = fliplr(r2);
 
-for n = 2:size(c1,2)
-    if c1(1,n) > c2(1,size(c1,2)+2-n)
-       startN = n;
-       break
-    end   
-end
+% for n = 2:size(c1,2)
+%     if c1(1,n) > c2(1,size(c1,2)+2-n)
+%        startN = n;
+%        break
+%     end   
+% end
+% 
+% for n = 2:size(c1,2)
+%     if c1(1,n) < c2(1,size(c1,2)+2-n) && n > startN
+%        endN = n;
+%        break
+%     end 
+% end
 
-for n = 2:size(c1,2)
-    if c1(1,n) < c2(1,size(c1,2)+2-n) && n > startN
-       endN = n;
-       break
-    end 
-end
+startN = 36;
+endN = 170;
 
-% btwRegion = [c1(1,startN:endN), c2(1,startN:endN)];
-% x_region = [c1(2,startN:endN), c2(2,startN:endN)];
-% ff = fill(x_region, btwRegion, [0.95 0.95 0.9]);
-% ff.EdgeColor = 'none';
+startN2 = 32;
+endN2 = 180;
+
+btwRegion = [c1(1,startN:endN), c2(1,startN2:endN2)];
+x_region = [c1(2,startN:endN), c2(2,startN2:endN2)];
+ff = fill(x_region, btwRegion, [0.95 0.95 0.9]);
+ff.EdgeColor = 'none';
 
 %example of drawing a arrow
 % p1 = [2 3];                         % First Point

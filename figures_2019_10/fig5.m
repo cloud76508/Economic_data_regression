@@ -19,7 +19,7 @@ s1 = surf(X,Y, z,'FaceAlpha',0);
 
 hold on
 
-c1 = contour(X,Y,z1,[8], 'b');
+c1 = contour(X,Y,z1,[8], 'r');
 
 
 xLab = xlabel('X_1','fontsize',10);

@@ -18,10 +18,10 @@ c1 = contour(x1,x2,y1,[1], 'r', 'LineWidth',1.5 );
 f1 =gca;
 f1.XAxisLocation ='top';
 xticks([0])
-xticklabels({'Smax'})
+xticklabels({'X_1_m_a_x'})
 f1.YAxisLocation ='right';
 yticks([0])
-yticklabels({'Tmax'})
+yticklabels({'X_2_m_a_x'})
 hold on
 scatter(0,0,'MarkerEdgeColor','r',...
               'MarkerFaceColor','r',...
@@ -44,10 +44,10 @@ scatter(1,1,'MarkerEdgeColor','b',...
               'MarkerFaceColor','b',...
               'LineWidth',1.5)
 text(0.95,0.95,'B', 'Color','b')
-text(0.5,-0.07,'S_A')
-text(0.5,1.05,'S_B')
-text(-0.1,0.5,'T_A')
-text(1.05,0.5,'T_B')
+text(0.5,-0.07,'X_1_B')
+text(0.5,1.05,'X_1_A')
+text(-0.1,0.5,'X_2_B')
+text(1.05,0.5,'X_2_A')
 text(0.2,0.33,'U_B = Constant', 'Color','b')
 text(0.65,0.65,'U_A = Constant', 'Color','r')
 

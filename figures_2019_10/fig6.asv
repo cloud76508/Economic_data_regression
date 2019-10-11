@@ -27,16 +27,16 @@ hold on
 
 zUpper = z;
 zUpper(:,:) = threshold;
-s2 = surf(X,Y, zUpper,'FaceAlpha',0,'FaceColor', 'flat', 'EdgeColor' ,'r');
+s2 = surf(X,Y, zUpper,'FaceAlpha',0,'FaceColor', 'flat', 'EdgeColor' ,'b');
 c2 = s2.CData;
 c2(z < threshold) = 0;
 s2.CData = c2;
-text(1.7,8.7, 0.5,'U = Constant', 'Color','r')
+text(0.5,0.5, 0.1,'U = Constant', 'Color','b')
 
 
 hold on
 
-[M, c1] = contour(X,Y,z1,[threshold threshold], 'r');
+[M, c1] = contour(X,Y,z1,[threshold threshold], 'b');
 c1.LineWidth = 1.5;
 %c1.ShowText = 'on';
 
@@ -47,14 +47,14 @@ c1.LineWidth = 1.5;
 % c3(z < threshold) = 0;
 % s3.CData = c3;
 
-xLab = xlabel('X_1','fontsize',10);
+xLab = xlabel('X_1');
 xLab.Position = [6 -0.25 -0.05];
 xticks([]);
-yLab = ylabel('X_2','fontsize',10);
+yLab = ylabel('X_2');
 yLab.Position = [-0.25 6 -0.05];
 yticks([]);
 XX = yLab.Position;
-zlabel('U','fontsize',10)
+zlabel('U')
 zticks([])
 
 %shading interp
