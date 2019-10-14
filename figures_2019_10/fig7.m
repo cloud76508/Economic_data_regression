@@ -44,9 +44,9 @@ scatter(1,1,'MarkerEdgeColor','b',...
               'MarkerFaceColor','b',...
               'LineWidth',1.5)
 text(0.95,0.95,'B', 'Color','b')
-text(0.5,-0.07,'X_1')
+text(0.5,-0.07,'S')
 %text(0.5,1.05,'X_1_A')
-text(-0.1,0.5,'X_2')
+text(-0.1,0.5,'T')
 %text(1.05,0.5,'X_2_A')
 text(0.2,0.33,'U_B = Constant', 'Color','b')
 text(0.65,0.65,'U_A = Constant', 'Color','r')
@@ -76,10 +76,10 @@ x_region = [c1(2,startN:endN), c2(2,startN:endN)];
 ff = fill(x_region, btwRegion, [0.95 0.95 0.9]);
 ff.EdgeColor = 'none';
 
-% hold on 
-% xx = linspace(0.44,0.57, 5);
-% yy = linspace(0.4,0.6,5);
-% scatter(xx,yy,'x')
+hold on 
+xx = linspace(0.44,0.57, 5);
+yy = linspace(0.4,0.6,5);
+scatter(xx,yy,'x')
 
 
 %example of drawing a arrow
