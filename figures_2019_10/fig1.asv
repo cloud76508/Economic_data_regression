@@ -34,14 +34,9 @@ text(0.5,0.5,'U_A_2')
 text(0.65,0.65,'U_A_3')
 text(0.8,0.8,'U_A_4')
 
-arrowX = [0.8 0.25];
-arrowY = [0.9 0.9];
-annotation('arrow',arrowX,arrowY);
-
-arrowX2 = [0.93 0.93];
-arrowY2 = [0.75 0.25];
-annotation('arrow',arrowX2,arrowY2);
-
+arrowX = [0.5 0.5];
+arrowY = [0.5 0.5];
+AA = text(0.5,1.05,'\leftarrow','FontSize',12)
 
 text(0.03,0.1,'U_A_m_a_x > U_A_1 > U_A_2 > U_A_3 > U_A_4')
 

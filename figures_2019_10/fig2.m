@@ -20,10 +20,10 @@ xlabel('X_1')
 ylabel('X_2')
 f1.XAxisLocation ='bottom';
 xticks([0 1])
-xticklabels({'0', 'X_1_m_a_x'})
+xticklabels({'0', 'C_1'})
 f1.YAxisLocation ='left';
 yticks([0 1])
-yticklabels({'0', 'X_2_m_a_x'})
+yticklabels({'0', 'C_2'})
 hold on
 scatter(1,1,'MarkerEdgeColor','b',...
               'MarkerFaceColor','b',...
@@ -33,5 +33,14 @@ text(0.65,0.65,'U_B_1')
 text(0.5,0.5,'U_B_2')
 text(0.35,0.35,'U_B_3')
 text(0.2,0.2,'U_B_4')
+
+arrowX = [0.25 0.8];
+arrowY = [0.1 0.1];
+annotation('arrow',arrowX,arrowY);
+
+arrowX2 = [0.1 0.1];
+arrowY2 = [0.25 0.8];
+annotation('arrow',arrowX2,arrowY2);
+
 text(0.53,0.9,'U_B_m_a_x > U_B_1 > U_B_2 > U_B_3 > U_B_4')
 

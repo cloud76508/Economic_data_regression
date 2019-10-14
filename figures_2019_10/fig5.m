@@ -22,12 +22,25 @@ hold on
 c1 = contour(X,Y,z1,[8], 'r');
 
 
+scatter(5,5, 'r', 'filled')
+hold off
+
+
+fig = gca;
+fig.FontSize = 8;
+
 xLab = xlabel('X_1','fontsize',10);
-xLab.Position = [5 -0.5 -0.05];
-xticks([])
+xLab.Position = [7 -0.25 -0.05];
+%xticks([]);
+xticks([5])
+xticklabels({'C_1'})
+
 yLab = ylabel('X_2','fontsize',10);
-yLab.Position = [-0.5 5 -0.08];
-yticks([])
+yLab.Position = [-0.25 4 -0.05];
+%yticks([]);
+yticks([5])
+yticklabels({'C_2'})
+
 XX = yLab.Position;
 zlabel('U','fontsize',10)
 zticks([])
