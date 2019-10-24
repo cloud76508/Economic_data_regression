@@ -1,3 +1,6 @@
+clear all
+clc
+
 mu1 = [0 0];
 mu2 = [1 1];
 sigma = [1 0; 0 1];
