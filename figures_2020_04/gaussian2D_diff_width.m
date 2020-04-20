@@ -13,7 +13,7 @@ plot(x1,y1)
 hold on
 plot(x2,y2)
 hold on
-threshold = 0.25;
+threshold = 0.3;
 line([-2,3],[threshold,threshold],'LineStyle','--')
 
 [~,temp_index1] = min(abs(y1((length(y1)-1)/2+1:end)-threshold));
@@ -23,19 +23,20 @@ hold on
 region_color = [0.7 0.7 0.7];
 regionX = x(temp_index2:temp_index1+(length(y1)-1)/2);
 if sum(diff(regionX)>0.010001) ==0 
-   line([regionX(1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',4)
+   line([regionX(1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',6)
    hold off
 else
    midPoint = find(diff(regionX)>0.01001);
-   line([regionX(1),regionX(midPoint)],[0,0], 'Color',region_color,'LineWidth',4)
+   line([regionX(1),regionX(midPoint)],[0,0], 'Color',region_color,'LineWidth',6)
    hold on
-   line([regionX(midPoint+1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',4)
+   line([regionX(midPoint+1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',6)
    hold off
 end
 hold off
 ylabel('U')
-yticks([])
+yticks([0 1])
 xlabel('S')
+ylim([0 1])
 
 figure(2)
 plot(x1,y)
@@ -43,12 +44,12 @@ hold on
 line([-2,3],[threshold,threshold],'LineStyle','--')
 hold on
 if sum(diff(regionX)>0.010001) ==0 
-   line([regionX(1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',4)
+   line([regionX(1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',6)
 else
    midPoint = find(diff(regionX)>0.01001);
-   line([regionX(1),regionX(midPoint)],[0,0], 'Color',region_color,'LineWidth',4)
+   line([regionX(1),regionX(midPoint)],[0,0], 'Color',region_color,'LineWidth',6)
    hold on
-   line([regionX(midPoint+1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',4)
+   line([regionX(midPoint+1),regionX(end)],[0,0], 'Color',region_color,'LineWidth',6)
 end
 
 hold on
@@ -60,5 +61,6 @@ hold off
 
 
 ylabel('U')
-yticks([])
+yticks([0 1])
 xlabel('S')
+ylim([0 1])

@@ -1,17 +1,27 @@
-x = [-2:.01: 3];
+x = [-1.5:.01: 3];
 
 x1 = x;
 y1 = normpdf(x1,0,0.6);
 
 x2 = x;
-y2 = normpdf(x2,1,0.6);
+y2 = normpdf(x2,1,0.7);
 
 y= y1+y2;
 
+y1_part = y1;
+x1_part = x1;
+y2_part = y2;
+x2_part = x2;
+
+y1_part(x1<0) = [];
+x1_part(x1<0) = [];
+y2_part(x2>1) = [];
+x2_part(x2>1) = [];
+
 figure(1)
-plot(x1,y1)
+plot(x1_part,y1_part)
 hold on
-plot(x2,y2)
+plot(x2_part,y2_part)
 hold on
 threshold = 0.3;
 line([-2,3],[threshold,threshold],'LineStyle','--')
@@ -37,9 +47,10 @@ ylabel('U')
 yticks([0 1])
 xlabel('S')
 ylim([0 1])
+xlim([0 1])
 
 figure(2)
-plot(x1,y)
+plot(x,y)
 hold on
 line([-2,3],[threshold,threshold],'LineStyle','--')
 hold on
@@ -64,3 +75,4 @@ ylabel('U')
 yticks([0 1])
 xlabel('S')
 ylim([0 1])
+xlim([0 1])
