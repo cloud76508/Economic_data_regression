@@ -14,10 +14,12 @@ y1 = mvnpdf(X,mu1,sigma);
 y1 = reshape(y1,length(x2),length(x1));
 y2 = mvnpdf(X,mu2,sigma);
 y2 = reshape(y2,length(x2),length(x1));
-y = y1+y2;
 
-s1 = surf(X1,X2, y,'FaceAlpha',0);
+s1 = surf(X1,X2, y1,'FaceAlpha',0);
 
+hold on
+
+s2 = surf(X1,X2, y2,'FaceAlpha',0);
 
 hold on
 

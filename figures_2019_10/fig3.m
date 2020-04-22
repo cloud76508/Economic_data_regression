@@ -17,22 +17,22 @@ y2 = mvnpdf(X,mu2,sigma);
 y2 = reshape(y2,length(x2),length(x1));
 
 
-c1 = contour(x1,x2,y1,[1], 'r', 'LineWidth',1.5 );
+c1 = contour(x1,x2,y1,[1], 'b', 'LineWidth',1.5 );
 f1 =gca;
 f1.XAxisLocation ='top';
-xticks([0])
-xticklabels({'C_2'})
+xticks([])
+%xticklabels({'C_2'})
 f1.YAxisLocation ='right';
-yticks([0])
-yticklabels({'C_1'})
+yticks([])
+%yticklabels({'C_1'})
 hold on
 scatter(0,0,'MarkerEdgeColor','r',...
               'MarkerFaceColor','r',...
               'LineWidth',1.5)
-text(0.03,0.05,'A', 'Color','r')
+text(0.03,0.05,'A', 'Color','r','FontSize', 14)
 
 hold on
-c2 = contour(x1,x2,y2,[1], 'b', 'LineWidth',1.5);
+c2 = contour(x1,x2,y2,[1], 'r', 'LineWidth',1.5);
 % f2 = gca;
 % xlabel('S')
 % ylabel('T')
@@ -46,13 +46,13 @@ hold on
 scatter(1,1,'MarkerEdgeColor','b',...
               'MarkerFaceColor','b',...
               'LineWidth',1.5)
-text(0.95,0.95,'B', 'Color','b')
-text(0.5,-0.07,'X_1')
+text(0.95,0.95,'B', 'Color','b','FontSize', 14)
+text(0.5,-0.07,'T','FontSize', 14)
 %text(0.5,1.05,'X_1_A')
-text(-0.1,0.5,'X_2')
+text(-0.1,0.5,'S','FontSize', 14)
 %text(1.05,0.5,'X_2_A')
-text(0.2,0.33,'U_B = Constant', 'Color','b')
-text(0.65,0.65,'U_A = Constant', 'Color','r')
+text(0.12,0.33,'U_A = CONST', 'Color','r','FontSize', 14)
+text(0.65,0.65,'U_B = CONST', 'Color','b','FontSize', 14)
 
 % r1 = c1;
 % r1(:,1) = [];

@@ -31,7 +31,7 @@ s2 = surf(X,Y, zUpper,'FaceAlpha',0,'FaceColor', 'flat', 'EdgeColor' ,'r');
 c2 = s2.CData;
 c2(z < threshold) = 0;
 s2.CData = c2;
-text(1.7,8.7, 0.5,'U = Constant', 'Color','r')
+text(1.5,8.7, 0.6,'U = CONST', 'Color','r','FontSize', 14)
 
 
 hold on
@@ -54,20 +54,20 @@ hold off
 fig = gca;
 fig.FontSize = 8;
 
-xLab = xlabel('X_1','fontsize',10);
+xLab = xlabel('T','fontsize',14);
 xLab.Position = [7 -0.25 -0.05];
-%xticks([]);
-xticks([5])
-xticklabels({'C_1'})
+xticks([]);
+% xticks([5])
+% xticklabels({'C_1'})
 
-yLab = ylabel('X_2','fontsize',10);
+yLab = ylabel('S','fontsize',14);
 yLab.Position = [-0.25 4 -0.05];
-%yticks([]);
-yticks([5])
-yticklabels({'C_2'})
+yticks([]);
+% yticks([5])
+% yticklabels({'C_2'})
 
 XX = yLab.Position;
-zlabel('U','fontsize',10)
+zlabel('U','fontsize',14)
 zticks([])
 
 %shading interp
